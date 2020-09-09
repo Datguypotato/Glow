@@ -116,7 +116,11 @@ MonoBehaviour:
   m_MaxSize: {x: 12006, y: 8044}
   vertical: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 71
+=======
+  controlID: 135
+>>>>>>> Stashed changes
 =======
   controlID: 135
 >>>>>>> Stashed changes
@@ -145,7 +149,11 @@ MonoBehaviour:
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 116
+=======
+  controlID: 74
+>>>>>>> Stashed changes
 =======
   controlID: 74
 >>>>>>> Stashed changes
@@ -229,7 +237,11 @@ MonoBehaviour:
   m_MaxSize: {x: 4004, y: 8022}
   vertical: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   controlID: 16
+=======
+  controlID: 37
+>>>>>>> Stashed changes
 =======
   controlID: 37
 >>>>>>> Stashed changes
@@ -406,7 +418,11 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LastSelectedObjectID: 11272
+=======
+  m_LastSelectedObjectID: 11050
+>>>>>>> Stashed changes
 =======
   m_LastSelectedObjectID: 11050
 >>>>>>> Stashed changes
@@ -528,9 +544,15 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: {x: 7.28119, y: 4.150814, z: 14.226433}
     speed: 2
     m_Value: {x: 7.28119, y: 4.150814, z: 14.226433}
+=======
+    m_Target: {x: 10.514252, y: -0.02181387, z: 9.221821}
+    speed: 2
+    m_Value: {x: 10.514252, y: -0.02181387, z: 9.221821}
+>>>>>>> Stashed changes
 =======
     m_Target: {x: 10.514252, y: -0.02181387, z: 9.221821}
     speed: 2
@@ -565,9 +587,15 @@ MonoBehaviour:
       m_Value: 0
   m_Rotation:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_Target: {x: -0.049616657, y: -0.0832047, z: 0.0041463124, w: -0.9952938}
     speed: 2
     m_Value: {x: -0.049616367, y: -0.08320422, z: 0.004146288, w: -0.99528795}
+=======
+    m_Target: {x: 0.08641931, y: 0.55973184, z: -0.05885492, w: 0.82205486}
+    speed: 2
+    m_Value: {x: 0.08641904, y: 0.5597301, z: -0.058854736, w: 0.8220523}
+>>>>>>> Stashed changes
 =======
     m_Target: {x: 0.08641931, y: 0.55973184, z: -0.05885492, w: 0.82205486}
     speed: 2
@@ -595,7 +623,11 @@ MonoBehaviour:
     m_OcclusionCulling: 0
   m_ShowGlobalGrid: 1
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+=======
+  m_LastSceneViewRotation: {x: 0.10061726, y: 0.020297443, z: -0.0020513895, w: 0.99471647}
+>>>>>>> Stashed changes
 =======
   m_LastSceneViewRotation: {x: 0.10061726, y: 0.020297443, z: -0.0020513895, w: 0.99471647}
 >>>>>>> Stashed changes
@@ -661,9 +693,15 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: e0faffff8efbffff
+=======
+      m_SelectedIDs: 2a2b0000
+      m_LastClickedID: 11050
+      m_ExpandedIDs: b4faffff8efbffff
+>>>>>>> Stashed changes
 =======
       m_SelectedIDs: 2a2b0000
       m_LastClickedID: 11050
@@ -737,7 +775,11 @@ MonoBehaviour:
   - Assets/Scripts
   m_LastFoldersGridSize: 16
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_LastProjectPath: C:\Users\Gordon Cheung\source\repos\Glow\GlowPlatformer
+=======
+  m_LastProjectPath: D:\Unity project\Glow\GlowPlatformer
+>>>>>>> Stashed changes
 =======
   m_LastProjectPath: D:\Unity project\Glow\GlowPlatformer
 >>>>>>> Stashed changes
@@ -746,9 +788,15 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_SelectedIDs: b8290000
     m_LastClickedID: 10680
     m_ExpandedIDs: 0000000096290000b829000000ca9a3b
+=======
+    m_SelectedIDs: f0280000
+    m_LastClickedID: 10480
+    m_ExpandedIDs: 00000000f028000000ca9a3b
+>>>>>>> Stashed changes
 =======
     m_SelectedIDs: f0280000
     m_LastClickedID: 10480
@@ -782,7 +830,11 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     m_ExpandedIDs: 0000000096290000
+=======
+    m_ExpandedIDs: 00000000f0280000
+>>>>>>> Stashed changes
 =======
     m_ExpandedIDs: 00000000f0280000
 >>>>>>> Stashed changes
@@ -817,8 +869,13 @@ MonoBehaviour:
     m_RenameOverlay:
       m_UserAcceptedRename: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_Name: MethodExtensions
       m_OriginalName: MethodExtensions
+=======
+      m_Name: LampMover
+      m_OriginalName: LampMover
+>>>>>>> Stashed changes
 =======
       m_Name: LampMover
       m_OriginalName: LampMover
@@ -830,7 +887,11 @@ MonoBehaviour:
         width: 0
         height: 0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       m_UserData: 11352
+=======
+      m_UserData: 11124
+>>>>>>> Stashed changes
 =======
       m_UserData: 11124
 >>>>>>> Stashed changes
