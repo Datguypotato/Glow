@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 43
+    x: -123
+    y: 78
     width: 1920
     height: 997
   m_ShowMode: 4
@@ -115,7 +115,11 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 444}
   m_MaxSize: {x: 12006, y: 8044}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 71
+=======
+  controlID: 135
+>>>>>>> Stashed changes
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +144,11 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 116
+=======
+  controlID: 74
+>>>>>>> Stashed changes
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +228,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 322}
   m_MaxSize: {x: 4004, y: 8022}
   vertical: 1
+<<<<<<< Updated upstream
   controlID: 16
+=======
+  controlID: 37
+>>>>>>> Stashed changes
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -393,7 +405,11 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< Updated upstream
   m_LastSelectedObjectID: 11272
+=======
+  m_LastSelectedObjectID: 11050
+>>>>>>> Stashed changes
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -415,8 +431,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 572
+    x: -123
+    y: 607
     width: 1067
     height: 429
   m_ViewDataDictionary: {fileID: 0}
@@ -496,8 +512,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 0
-    y: 73
+    x: -123
+    y: 108
     width: 1067
     height: 480
   m_ViewDataDictionary: {fileID: 0}
@@ -511,9 +527,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
     m_Target: {x: 7.28119, y: 4.150814, z: 14.226433}
     speed: 2
     m_Value: {x: 7.28119, y: 4.150814, z: 14.226433}
+=======
+    m_Target: {x: 10.514252, y: -0.02181387, z: 9.221821}
+    speed: 2
+    m_Value: {x: 10.514252, y: -0.02181387, z: 9.221821}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -542,13 +564,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
+<<<<<<< Updated upstream
     m_Target: {x: -0.049616657, y: -0.0832047, z: 0.0041463124, w: -0.9952938}
     speed: 2
     m_Value: {x: -0.049616367, y: -0.08320422, z: 0.004146288, w: -0.99528795}
-  m_Size:
-    m_Target: 37.44461
+=======
+    m_Target: {x: 0.08641931, y: 0.55973184, z: -0.05885492, w: 0.82205486}
     speed: 2
-    m_Value: 37.44461
+    m_Value: {x: 0.08641904, y: 0.5597301, z: -0.058854736, w: 0.8220523}
+>>>>>>> Stashed changes
+  m_Size:
+    m_Target: 26.411411
+    speed: 2
+    m_Value: 26.411411
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -566,7 +594,11 @@ MonoBehaviour:
     m_DynamicClip: 0
     m_OcclusionCulling: 0
   m_ShowGlobalGrid: 1
+<<<<<<< Updated upstream
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+=======
+  m_LastSceneViewRotation: {x: 0.10061726, y: 0.020297443, z: -0.0020513895, w: 0.99471647}
+>>>>>>> Stashed changes
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -620,17 +652,23 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1067
-    y: 73
+    x: 944
+    y: 108
     width: 406
     height: 438
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
       m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: e0faffff8efbffff
+=======
+      m_SelectedIDs: 2a2b0000
+      m_LastClickedID: 11050
+      m_ExpandedIDs: b4faffff8efbffff
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -675,8 +713,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1067
-    y: 530
+    x: 944
+    y: 565
     width: 406
     height: 471
   m_ViewDataDictionary: {fileID: 0}
@@ -698,14 +736,24 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: 16
+<<<<<<< Updated upstream
   m_LastProjectPath: C:\Users\Gordon Cheung\source\repos\Glow\GlowPlatformer
+=======
+  m_LastProjectPath: D:\Unity project\Glow\GlowPlatformer
+>>>>>>> Stashed changes
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< Updated upstream
     m_SelectedIDs: b8290000
     m_LastClickedID: 10680
     m_ExpandedIDs: 0000000096290000b829000000ca9a3b
+=======
+    m_SelectedIDs: f0280000
+    m_LastClickedID: 10480
+    m_ExpandedIDs: 00000000f028000000ca9a3b
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -733,7 +781,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< Updated upstream
     m_ExpandedIDs: 0000000096290000
+=======
+    m_ExpandedIDs: 00000000f0280000
+>>>>>>> Stashed changes
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -764,15 +816,24 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: b62f0000c06f0000ba6f0000983a0000c63a00002e3f0000c62900009e2f0000362d00006230000098300000482d00002a3800007c3000005a310000ae3b0000922e0000482c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
+<<<<<<< Updated upstream
       m_Name: MethodExtensions
       m_OriginalName: MethodExtensions
+=======
+      m_Name: LampMover
+      m_OriginalName: LampMover
+>>>>>>> Stashed changes
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< Updated upstream
       m_UserData: 11352
+=======
+      m_UserData: 11124
+>>>>>>> Stashed changes
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -835,8 +896,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1475
-    y: 73
+    x: 1352
+    y: 108
     width: 443
     height: 928
   m_ViewDataDictionary: {fileID: 0}
