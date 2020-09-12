@@ -1,3 +1,5 @@
+// object holding data
+
 module.exports = class Vector2
 {
     constructor(x = 0, y = 0)

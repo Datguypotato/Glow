@@ -32,6 +32,15 @@ io.on('connection', function(socket)
       }
    }
 
+   // position data from cliean(Unity)
+   socket.on('updatePosition', function(data)
+   {
+      player.position.x = data.position.x;
+      player.position.y = data.position.y;
+
+      socket.broadcast.emit('updatePosition', player);
+   });
+
    // client to serverv
    socket.on('disconnect', function(){
       console.log('a user has disconnected')
