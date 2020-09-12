@@ -32,7 +32,7 @@ io.on('connection', function(socket)
       }
    }
 
-   // position data from cliean(Unity)
+   // position data from client(Unity)   
    socket.on('updatePosition', function(data)
    {
       player.position.x = data.position.x;
