@@ -16,6 +16,7 @@ io.on('connection', function(socket)
    players[thisPlayerID] = player;
    sockets[thisPlayerID] = socket;
 
+   console.log(thisPlayerID);
    // server to client
    socket.emit('register', {id: thisPlayerID})
    socket.emit('spawn', player) // tell myself i have spawned

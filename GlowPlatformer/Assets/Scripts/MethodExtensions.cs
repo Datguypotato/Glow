@@ -4,8 +4,11 @@ using UnityEngine;
 
 public static class MethodExtensions
 {
-    public static string RemoveQuotes(this string Value)
+    public static string CleanSocketData(this string Value)
     {
-        return Value.Replace("\"", "");
+        Value = Value.Replace("}", " ");
+        Value = Value.Replace("\"", " ");
+        Value = Value.Remove(0, 7);
+        return Value;
     }
 }
