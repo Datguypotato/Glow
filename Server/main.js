@@ -16,12 +16,12 @@ io.on('connection', function(socket)
    players[thisPlayerID] = player;
    sockets[thisPlayerID] = socket;
 
-   console.log(thisPlayerID);
+   console.log('The user ID: ' + thisPlayerID);
    // server to client
    socket.emit('register', {id: thisPlayerID})
    socket.emit('spawn', player) // tell myself i have spawned
    // send to all the other sockets except yourself
-   socket.broadcast.emit('spawn', player) // tell others i have spawned
+   socket.broadcast.emit('spawn', {id: thisPlayerID}) // tell others i have spawned
 
    // tell myself about everyone else
    for(var playerID in players)
@@ -41,7 +41,7 @@ io.on('connection', function(socket)
       socket.broadcast.emit('updatePosition', player);
    });
 
-   // client to serverv
+   // client to server
    socket.on('disconnect', function(){
       console.log('a user has disconnected')
       delete players[thisPlayerID];

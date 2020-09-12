@@ -43,7 +43,7 @@ namespace SocketIO
 		#region Public Properties
 
         [Header("Socket IO component")]
-		public string url = "ws://127.0.0.1:4567/socket.io/?EIO=4&transport=websocket";
+		public string url = "ws://127.0.0.1:52300/socket.io/?EIO=4&transport=websocket";
 		public bool autoConnect = true;
 		public int reconnectDelay = 5;
 		public float ackExpirationTime = 1800f;

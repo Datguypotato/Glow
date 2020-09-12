@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class NetworkIdentity : MonoBehaviour
 {
-    [Header("Helpfull values")]
-    [GreyOut]
-    [SerializeField] private string m_Id;
-    [GreyOut]
+    [Header("Helpfull values    DONT EDIT VALUES")]
+    [SerializeField] private string m_ID;
     [SerializeField] private bool m_IsControlling;
 
     private SocketIOComponent m_Socket;
@@ -20,8 +18,9 @@ public class NetworkIdentity : MonoBehaviour
 
     public void SetControllerID(string a_ID)
     {
-        m_Id = a_ID;
-        m_IsControlling = (NetworkClient.Client_ID == m_Id ? true : false;
+        m_ID = a_ID;
+
+        m_IsControlling = (NetworkClient.Client_ID == m_ID) ? true : false;
     }
 
     public void SetSocketRefference(SocketIOComponent a_Socket)
@@ -32,7 +31,7 @@ public class NetworkIdentity : MonoBehaviour
 
     public string GetId()
     {
-        return m_Id;
+        return m_ID;
     }
 
 
@@ -44,10 +43,5 @@ public class NetworkIdentity : MonoBehaviour
     public SocketIOComponent GetSocket()
     {
         return m_Socket;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
