@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// class holding player data
+
 [System.Serializable]
-public class Player
+public class PlayerNetwork
 {
     public string id;
     public Position position;
+    private bool isDead;
 }

@@ -8,7 +8,7 @@ public class NetworkTransform : MonoBehaviour
     [SerializeField] private Vector3 m_OldPos;
 
     private NetworkIdentity m_NetworkIdentity;
-    private Player m_Player;
+    private PlayerNetwork m_Player;
 
     private float stillCounter = 0;
 
@@ -17,7 +17,7 @@ public class NetworkTransform : MonoBehaviour
     {
         m_NetworkIdentity = GetComponent<NetworkIdentity>();
         m_OldPos = transform.position;
-        m_Player = new Player();
+        m_Player = new PlayerNetwork();
         m_Player.position = new Position();
 
         if(!m_NetworkIdentity.isControlling())
