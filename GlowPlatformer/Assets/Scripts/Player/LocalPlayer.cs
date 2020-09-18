@@ -9,6 +9,9 @@ public class LocalPlayer : MonoBehaviour
     public KeyCode left;
     public KeyCode right;
 
+    //[SerializeField] LocalPlayer m_Target;
+    public bool isTarget;
+
     [SerializeField] float m_Speed;
 
     // Start is called before the first frame update
@@ -38,10 +41,32 @@ public class LocalPlayer : MonoBehaviour
         }
     }
 
+    //public LocalPlayer GetTarget()
+    //{
+    //    return m_Target;
+    //}
+    
+
     private void OnMouseDown()
     {
         Debug.Log(gameObject.name + " has been clicked");
         LocalPlayerManager.instance.UpdateInputField(this);
     }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(!isTarget)
+        {
+            if (collision.GetComponent<LocalPlayer>() != null)
+            {
+                LocalPlayer lp = collision.GetComponent<LocalPlayer>();
+                Vector3 collPoint = (transform.position + lp.transform.position) / 2;
 
+                LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
+                MusicManager.instance.PlayNote();
+            }
+        }
+    }
+
+    
 }
