@@ -13,11 +13,12 @@ public class LocalPlayer : MonoBehaviour
     public bool isTarget;
 
     [SerializeField] float m_Speed;
+    [SerializeField] ParticleSystem m_Particle;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_Particle.Stop();
     }
 
     // Update is called once per frame
@@ -52,14 +53,14 @@ public class LocalPlayer : MonoBehaviour
         Debug.Log(gameObject.name + " has been clicked");
         LocalPlayerManager.instance.UpdateInputField(this);
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!isTarget)
+        if (!isTarget)
         {
-            if (collision.GetComponent<LocalPlayer>() != null)
+            if (collision.gameObject.GetComponent<LocalPlayer>() != null)
             {
-                LocalPlayer lp = collision.GetComponent<LocalPlayer>();
+                LocalPlayer lp = collision.gameObject.GetComponent<LocalPlayer>();
                 Vector3 collPoint = (transform.position + lp.transform.position) / 2;
 
                 LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
@@ -68,5 +69,14 @@ public class LocalPlayer : MonoBehaviour
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        m_Particle.Play();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        m_Particle.Stop();
+    }
+
 }
