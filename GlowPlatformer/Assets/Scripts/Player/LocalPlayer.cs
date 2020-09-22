@@ -2,51 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocalPlayer : MonoBehaviour
+public class LocalPlayer : BasePlayer
 {
+    [Header("Controls")]
     public KeyCode up;
     public KeyCode down;
     public KeyCode left;
     public KeyCode right;
 
     //[SerializeField] LocalPlayer m_Target;
-    public bool isTarget;
+
 
     [SerializeField] float m_Speed;
-    [SerializeField] ParticleSystem m_Particle;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        m_Particle.Stop();
-    }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKey(up))
         {
-            transform.Translate(Vector3.up * m_Speed * Time.deltaTime);
+            rb.AddForce(Vector2.up * m_Speed);
+            //transform.Translate(Vector3.up * m_Speed * Time.deltaTime);
         }
         if (Input.GetKey(down))
         {
-            transform.Translate(Vector3.down * m_Speed * Time.deltaTime);
+            rb.AddForce(Vector2.down * m_Speed);
+            //transform.Translate(Vector3.down * m_Speed * Time.deltaTime);
         }
         if (Input.GetKey(left))
         {
-            transform.Translate(Vector3.left * m_Speed * Time.deltaTime);
+            rb.AddForce(Vector2.left * m_Speed);
+            //transform.Translate(Vector3.left * m_Speed * Time.deltaTime);
         }
         if (Input.GetKey(right))
         {
-            transform.Translate(Vector3.right * m_Speed * Time.deltaTime);
+            rb.AddForce(Vector2.right * m_Speed);
+            //transform.Translate(Vector3.right * m_Speed * Time.deltaTime);
         }
     }
-
-    //public LocalPlayer GetTarget()
-    //{
-    //    return m_Target;
-    //}
     
+
 
     private void OnMouseDown()
     {
@@ -54,29 +48,15 @@ public class LocalPlayer : MonoBehaviour
         LocalPlayerManager.instance.UpdateInputField(this);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected override void OnTargetHit(Collision2D collision)
     {
-        if (!isTarget)
+        if (collision.gameObject.GetComponent<LocalPlayer>() != null)
         {
-            if (collision.gameObject.GetComponent<LocalPlayer>() != null)
-            {
-                LocalPlayer lp = collision.gameObject.GetComponent<LocalPlayer>();
-                Vector3 collPoint = (transform.position + lp.transform.position) / 2;
+            LocalPlayer lp = collision.gameObject.GetComponent<LocalPlayer>();
+            Vector3 collPoint = (transform.position + lp.transform.position) / 2;
 
-                LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
-                MusicManager.instance.PlayNote();
-            }
+            LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
+            MusicManager.instance.PlayNote();
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        m_Particle.Play();
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        m_Particle.Stop();
-    }
-
 }

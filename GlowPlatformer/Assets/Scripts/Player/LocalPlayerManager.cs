@@ -45,7 +45,7 @@ public class LocalPlayerManager : MonoBehaviour
         Transform t1 = Instantiate(m_AfterGlowPrefab, collPoint, Quaternion.identity).GetComponent<Transform>();
         Transform t2 = Instantiate(m_AfterGlowPrefab, collPoint, Quaternion.identity).GetComponent<Transform>();
 
-        Debug.Log(dirp1);
+        //Debug.Log(dirp1);
 
         t1.rotation = Quaternion.FromToRotation(Vector3.right, dirp1);
         t2.rotation = Quaternion.FromToRotation(Vector3.right, dirp2);
