@@ -8,6 +8,7 @@ public abstract class BasePlayer : MonoBehaviour
 
     [SerializeField] private AudioClip[] m_CollSFX;
     private AudioSource m_AudioSource;
+    private int lastIndex = 0;
 
     [SerializeField] protected ParticleSystem m_Particle;
 
@@ -33,6 +34,16 @@ public abstract class BasePlayer : MonoBehaviour
         {
             Debug.Log("hit wall");
             int randomIndex = Random.Range(0, m_CollSFX.Length);
+            // making sure you dont get the same in a row
+            if (randomIndex == lastIndex)
+            {
+                if (randomIndex == m_CollSFX.Length)
+                    randomIndex = 0;
+                else
+                    randomIndex++;
+            }
+                
+
             m_AudioSource.PlayOneShot(m_CollSFX[randomIndex]);
 
             Vector2 knockbackDir = transform.position - collision.transform.position;
