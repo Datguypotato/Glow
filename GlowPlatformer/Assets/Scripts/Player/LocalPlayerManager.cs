@@ -79,13 +79,13 @@ public class LocalPlayerManager : MonoBehaviour
     }
 
     // Couldn't start coroutine from the instance
-    public void StartRespawn(LocalPlayer p1, LocalPlayer p2, Vector3 collPoint)
+    public void StartRespawn(BasePlayer p1, BasePlayer p2, Vector3 collPoint)
     {
         StartCoroutine(RespawnPairs(p1, p2, collPoint));
         SpawnAfterGlow(p1.transform.position, p2.transform.position, collPoint);
     }
 
-    public IEnumerator RespawnPairs(LocalPlayer p1, LocalPlayer p2, Vector3 collPoint)
+    public IEnumerator RespawnPairs(BasePlayer p1, BasePlayer p2, Vector3 collPoint)
     {
         
         m_explosionSpriteTrans.position = collPoint;

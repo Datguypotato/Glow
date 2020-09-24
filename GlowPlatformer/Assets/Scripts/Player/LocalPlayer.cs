@@ -50,12 +50,12 @@ public class LocalPlayer : BasePlayer
 
     protected override void OnTargetHit(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<LocalPlayer>() != null)
+        if (collision.gameObject.GetComponent<BasePlayer>() != null)
         {
-            LocalPlayer lp = collision.gameObject.GetComponent<LocalPlayer>();
-            Vector3 collPoint = (transform.position + lp.transform.position) / 2;
+            BasePlayer bp = collision.gameObject.GetComponent<BasePlayer>();
+            Vector3 collPoint = (transform.position + bp.transform.position) / 2;
 
-            LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
+            LocalPlayerManager.instance.StartRespawn(this, bp, collPoint);
             MusicManager.instance.PlayNote();
             MusicManager.instance.ChangeMusic();
         }
