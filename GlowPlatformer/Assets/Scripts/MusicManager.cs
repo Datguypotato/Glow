@@ -12,6 +12,14 @@ public class MusicManager : MonoBehaviour
 
     AudioSource m_audioSource;
 
+    public AudioSource loop1;
+    public AudioSource loop2;
+    public AudioSource loop3;
+    public AudioSource loop4;
+
+    public int musicIntensity = 0;
+    bool onCd;
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -26,6 +34,10 @@ public class MusicManager : MonoBehaviour
     private void Start()
     {
         m_audioSource = GetComponent<AudioSource>();
+
+        loop1.mute = true;
+        loop2.mute = true;
+        loop3.mute = true;
     }
 
     public void PlayNote()
@@ -35,5 +47,53 @@ public class MusicManager : MonoBehaviour
 
         if (noteCounter >= notes.Length)
             noteCounter = 0;
+    }
+
+    private void Update()
+    {
+        if (musicIntensity > 0 && onCd == false)
+        {
+            StartCoroutine(CountDown());
+        }
+
+        if (musicIntensity < 6)
+        {
+            loop1.mute = false;
+        }
+        else
+        {
+            loop1.mute = true;
+        }
+
+        if (musicIntensity > 5 && musicIntensity < 11)
+        {
+            loop2.mute = false;
+        }
+        else
+        {
+            loop2.mute = true;
+        }
+
+        if (musicIntensity > 10)
+        {
+            loop3.mute = false;
+        }
+        else
+        {
+            loop3.mute = true;
+        }
+    }
+
+    IEnumerator CountDown()
+    {
+        onCd = true;
+        yield return new WaitForSeconds(3);
+        musicIntensity -= 1;
+        onCd = false;
+    }
+
+    public void ChangeMusic()
+    {
+        musicIntensity += 1;
     }
 }

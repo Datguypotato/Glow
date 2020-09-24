@@ -57,6 +57,7 @@ public class LocalPlayer : BasePlayer
 
             LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
             MusicManager.instance.PlayNote();
+            MusicManager.instance.ChangeMusic();
         }
     }
 }

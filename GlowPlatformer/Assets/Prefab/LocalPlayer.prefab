@@ -400,10 +400,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5442595746278216280}
     m_Modifications:
-    - target: {fileID: 100006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
-      propertyPath: m_Name
-      value: Soul soft
-      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
