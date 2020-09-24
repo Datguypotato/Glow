@@ -41,6 +41,7 @@ public class NetworkClient : SocketIOComponent
 
         On("register", (E) =>
         {
+            Debug.Log("register");
             JSONNode node = JSON.Parse(E.data.ToString());
             Client_ID = node["id"].Value;
 
@@ -49,6 +50,7 @@ public class NetworkClient : SocketIOComponent
 
         On("spawn", (E) =>
         {
+            Debug.Log("spawn");
             JSONNode node = JSON.Parse(E.data.ToString());
 
             string id = node["id"].Value;
@@ -73,18 +75,21 @@ public class NetworkClient : SocketIOComponent
 
         });
 
-        On("updatePosition", (E) =>
+        On("joy", (E) =>
         {
             JSONNode node = JSON.Parse(E.data.ToString());
 
             string id = node["id"].Value;
-            float x = node["position"]["x"];
-            float y = node["position"]["y"];
+            float x = node["position"]["x"].AsFloat / 100;
+            float y = node["position"]["y"].AsFloat / 100;
+
+            Debug.Log("received position X: " + x + " Y: " + y + "\n from id: " + id);
 
             NetworkIdentity ni = m_ServerObjects[id];
 
-            Debug.Log(m_ServerObjects[id]);
-            ni.transform.position = new Vector3(x, y, 0);
+
+            //Debug.Log(m_ServerObjects[id]);
+            ni.Move(x, y);
         });
     }
 

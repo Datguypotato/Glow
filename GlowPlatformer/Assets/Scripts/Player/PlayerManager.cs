@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    [Header("Data")]
-    [SerializeField] private float m_Speed = 4;
+    //[Header("Data")]
+    //[SerializeField] private float m_Speed = 4;
 
-    [Header("Class References")]
-    [SerializeField] private NetworkIdentity m_NetworkIdentity;
+    //[Header("Class References")]
+    //[SerializeField] private NetworkIdentity m_NetworkIdentity;
 
 
-    void Update()
-    {
-        if(m_NetworkIdentity.isControlling())
-        {
-            CheckMovement();
-        }
-    }
+    //void Update()
+    //{
+    //    if(m_NetworkIdentity.isControlling())
+    //    {
+    //        CheckMovement();
+    //    }
+    //}
 
-    private void CheckMovement()
-    {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+    //public void CheckMovement()
+    //{
+    //    float h = Input.GetAxis("Horizontal");
+    //    float v = Input.GetAxis("Vertical");
 
-        transform.position += new Vector3(h, v, 0) * m_Speed * Time.deltaTime;
-    }
+    //    transform.position += new Vector3(h, v, 0) * m_Speed * Time.deltaTime;
+    //}
 }

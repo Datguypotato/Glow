@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class NetworkIdentity : MonoBehaviour
 {
+    [SerializeField] float m_Speed;
+
     [Header("Helpfull values    DONT EDIT VALUES")]
     [SerializeField] private string m_ID;
     [SerializeField] private bool m_IsControlling;
@@ -14,6 +16,11 @@ public class NetworkIdentity : MonoBehaviour
     public void Awake()
     {
         m_IsControlling = false;
+    }
+
+    public void Move(float x, float y)
+    {
+        transform.position += new Vector3(x, y, 0) * m_Speed * Time.deltaTime;
     }
 
     public void SetControllerID(string a_ID)

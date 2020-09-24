@@ -29,32 +29,33 @@ public class NetworkTransform : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(m_NetworkIdentity.isControlling())
-        {
-            if(m_OldPos != transform.position)
-            {
-                m_OldPos = transform.position;
-                stillCounter = 0;
-                SendData();
-            }
-            else
-            {
-                stillCounter += Time.deltaTime;
+        //if(m_NetworkIdentity.isControlling())
+        //{
+        //    if(m_OldPos != transform.position)
+        //    {
+        //        m_OldPos = transform.position;
+        //        stillCounter = 0;
+        //        SendData();
+        //    }
+        //    else
+        //    {
+        //        stillCounter += Time.deltaTime;
 
-                if(stillCounter >= 1)
-                {
-                    stillCounter = 0;
-                    SendData();
-                }
-            }
-        }
+        //        if(stillCounter >= 1)
+        //        {
+        //            stillCounter = 0;
+        //            SendData();
+        //        }
+        //    }
+        //}
     }
 
-    private void SendData()
-    {
-        m_Player.position.x = Mathf.Round(transform.position.x * 1000.0f) / 1000.0f; 
-        m_Player.position.y = Mathf.Round(transform.position.y * 1000.0f) / 1000.0f;
+    // deprecated
+    //private void SendData()
+    //{
+    //    m_Player.position.x = Mathf.Round(transform.position.x * 1000.0f) / 1000.0f; 
+    //    m_Player.position.y = Mathf.Round(transform.position.y * 1000.0f) / 1000.0f;
 
-        m_NetworkIdentity.GetSocket().Emit("updatePosition", new JSONObject(JsonUtility.ToJson(m_Player)));
-    }
+    //    m_NetworkIdentity.GetSocket().Emit("updatePosition", new JSONObject(JsonUtility.ToJson(m_Player)));
+    //}
 }

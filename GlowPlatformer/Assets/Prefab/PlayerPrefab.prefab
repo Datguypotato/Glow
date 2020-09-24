@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -6271467180434220469}
   - component: {fileID: -8117159130078951083}
   - component: {fileID: -3703557302665570254}
-  - component: {fileID: 926556075853702542}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -46,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4bb91c0a04380c48bf7b602f113c00b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Speed: 0
   m_ID: 
   m_IsControlling: 0
 --- !u!114 &-8117159130078951083
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8667684286359098192}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 004c1a4b78a0edd40b6c1f11094466c9, type: 3}
   m_Name: 
@@ -109,17 +109,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &926556075853702542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8667684286359098192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78d14e0f2b9241c47bde2bb0b70be17d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 4
-  m_NetworkIdentity: {fileID: -6271467180434220469}
