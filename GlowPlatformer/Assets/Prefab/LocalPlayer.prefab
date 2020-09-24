@@ -132,7 +132,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c6f1e92c42e395c42bf00afa86550420, type: 3}
   - {fileID: 8300000, guid: 52faddaba3520e34589e19190e93313f, type: 3}
   - {fileID: 8300000, guid: 94371a4616d48384b956458ca74aab2f, type: 3}
+  - {fileID: 8300000, guid: f20251d7e9c6c804cba6a74021cd1569, type: 3}
+  - {fileID: 8300000, guid: 532cf7db5cffd83448114db1a1232718, type: 3}
+  - {fileID: 8300000, guid: 54f3d9eec0d205240ba796e8d7798fbe, type: 3}
+  - {fileID: 8300000, guid: dc19556981386b045b985b8d3230953a, type: 3}
   m_Particle: {fileID: 3591441210530758852}
+  m_KnockbackForce: 500
   up: 119
   down: 115
   left: 97
@@ -442,6 +447,10 @@ PrefabInstance:
     - target: {fileID: 400006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
+      propertyPath: m_Name
+      value: Soul soft
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
       propertyPath: m_Layer

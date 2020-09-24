@@ -25,7 +25,11 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 422}
   m_MaxSize: {x: 12006, y: 8022}
   vertical: 0
+<<<<<<< HEAD
   controlID: 8026
+=======
+  controlID: 1408
+>>>>>>> main
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -131,7 +135,11 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 422}
   m_MaxSize: {x: 4002, y: 8022}
   vertical: 1
+<<<<<<< HEAD
   controlID: 8027
+=======
+  controlID: 1409
+>>>>>>> main
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,14 +199,20 @@ MonoBehaviour:
   m_Gizmos: 0
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 0
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 0.13993454, y: 5.650244, z: 7.408983}
     speed: 2
     m_Value: {x: 0.13993454, y: 5.650244, z: 7.408983}
+=======
+    m_Target: {x: 2.494119, y: -1.7645767, z: -1.0859375}
+    speed: 2
+    m_Value: {x: 2.494119, y: -1.7645767, z: -1.0859375}
+>>>>>>> main
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -219,14 +233,15 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 1
-      speed: 2
-      m_Value: 1
-    zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
+    zGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
   m_Rotation:
+<<<<<<< HEAD
     m_Target: {x: 0.09694934, y: -0.17757507, z: -0.017582636, w: -0.97916704}
     speed: 2
     m_Value: {x: 0.09694889, y: -0.17757425, z: -0.017582554, w: -0.9791625}
@@ -234,10 +249,19 @@ MonoBehaviour:
     m_Target: 22
     speed: 2
     m_Value: 22
-  m_Ortho:
-    m_Target: 0
+=======
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
     speed: 2
-    m_Value: 0
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
+  m_Size:
+    m_Target: 25.035498
+    speed: 2
+    m_Value: 25.035498
+>>>>>>> main
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -403,7 +427,11 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_LastSelectedObjectID: -7528
+=======
+  m_LastSelectedObjectID: -1140
+>>>>>>> main
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -428,7 +456,11 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 322}
   m_MaxSize: {x: 4004, y: 8022}
   vertical: 1
+<<<<<<< HEAD
   controlID: 7995
+=======
+  controlID: 1353
+>>>>>>> main
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -446,8 +478,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 374
     height: 371
+=======
+    width: 362
+    height: 481
+>>>>>>> main
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
@@ -486,7 +523,11 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< HEAD
       m_ExpandedIDs: c665fdff9ae2ffffa444000066450000
+=======
+      m_ExpandedIDs: 12f9ffff
+>>>>>>> main
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: Rotating Obstacle (1)
@@ -575,20 +616,35 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
     - Assets/Vincent Assets/Obstacles/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
   - Assets/Vincent Assets/Obstacles/Scripts
+=======
+    - Assets/Sound/Spooky
+  m_ViewMode: 1
+  m_StartGridSize: 16
+  m_LastFolders:
+  - Assets/Sound/Spooky
+>>>>>>> main
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\1 Sint lucas Gamedev\2 Projects\Glow\1 Project Folder\Glow\GlowPlatformer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 123}
     m_SelectedIDs: ca480000
     m_LastClickedID: 18634
     m_ExpandedIDs: 00000000ac3f0000b83f0000f03f0000244200005c430000c4480000
+=======
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 802c0000
+    m_LastClickedID: 11392
+    m_ExpandedIDs: 00000000642c0000762c000012310000a231000000ca9a3b
+>>>>>>> main
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -616,7 +672,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ac3f0000b83f0000f03f0000244200005c430000c4480000
+=======
+    m_ExpandedIDs: 00000000642c0000762c000012310000a231000000ca9a3b
+>>>>>>> main
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -641,21 +701,35 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 98e2ffff
     m_LastClickedInstanceID: -7528
+=======
+    m_SelectedInstanceIDs: cc2b0000
+    m_LastClickedInstanceID: 11212
+>>>>>>> main
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 000000005c2a00005e9800007a560000285600005a2e0000728c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
+<<<<<<< HEAD
       m_Name: RotatingPlatform
       m_OriginalName: RotatingPlatform
+=======
+      m_Name: SpookyCollision sound 4
+      m_OriginalName: SpookyCollision sound 4
+>>>>>>> main
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< HEAD
       m_UserData: 18652
+=======
+      m_UserData: 12206
+>>>>>>> main
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -755,7 +829,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewResizer:
-    m_CachedPref: 305
+    m_CachedPref: 246
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
