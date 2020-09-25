@@ -7,7 +7,7 @@ using SimpleJSON;
 public class NetworkClient : SocketIOComponent 
 {
     [SerializeField] private Transform m_NetworkContainer;
-    [SerializeField] private Dictionary<string, NetworkIdentity> m_ServerObjects;
+    [SerializeField] private Dictionary<string, NetworkPlayer> m_ServerObjects;
 
     [SerializeField] private GameObject m_PlayerPrefab;
     
@@ -23,7 +23,7 @@ public class NetworkClient : SocketIOComponent
 
     private void Initialize()
     {
-        m_ServerObjects = new Dictionary<string, NetworkIdentity>();
+        m_ServerObjects = new Dictionary<string, NetworkPlayer>();
     }
 
     // Update is called once per frame
@@ -41,25 +41,28 @@ public class NetworkClient : SocketIOComponent
 
         On("register", (E) =>
         {
-            Debug.Log("register");
+            Debug.Log("Register called");
             JSONNode node = JSON.Parse(E.data.ToString());
             Client_ID = node["id"].Value;
 
-            Debug.Log("Our client ID: " + Client_ID);
+            Debug.Log("Client id: " + Client_ID + "joined");
         });
 
         On("spawn", (E) =>
         {
-            Debug.Log("spawn");
+            Debug.Log("Spawned called");
             JSONNode node = JSON.Parse(E.data.ToString());
 
             string id = node["id"].Value;
+            float x = NetworkPlayerManager.instance.GetMinMaxX();
+            float y = NetworkPlayerManager.instance.GetMinMaxy();
+            Vector3 randomPos = new Vector3(Random.Range(-x, x), Random.Range(-y, y), 0);
 
-            GameObject g = Instantiate(m_PlayerPrefab, m_NetworkContainer);
+            GameObject g = Instantiate(m_PlayerPrefab, randomPos, Quaternion.identity,  m_NetworkContainer);
             g.name = string.Format("Player ({0})", id);
-            NetworkIdentity ni = g.GetComponent<NetworkIdentity>();
-            ni.SetControllerID(id);
-            ni.SetSocketRefference(this);
+
+            NetworkPlayer ni = g.GetComponent<NetworkPlayer>();
+            ni.SetID(id);
             m_ServerObjects.Add(id, ni);
         });
 
@@ -75,6 +78,7 @@ public class NetworkClient : SocketIOComponent
 
         });
 
+        // getting web joystick data
         On("joy", (E) =>
         {
             JSONNode node = JSON.Parse(E.data.ToString());
@@ -83,13 +87,10 @@ public class NetworkClient : SocketIOComponent
             float x = node["position"]["x"].AsFloat / 100;
             float y = node["position"]["y"].AsFloat / 100;
 
-            Debug.Log("received position X: " + x + " Y: " + y + "\n from id: " + id);
+            NetworkPlayer ni = m_ServerObjects[id];
 
-            NetworkIdentity ni = m_ServerObjects[id];
-
-
-            //Debug.Log(m_ServerObjects[id]);
-            ni.Move(x, y);
+            Debug.Log(m_ServerObjects[id]);
+            ni.SetJoyDir(new Vector3(x, y, 0));
         });
     }
 

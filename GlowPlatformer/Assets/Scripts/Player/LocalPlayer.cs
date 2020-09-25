@@ -39,25 +39,24 @@ public class LocalPlayer : BasePlayer
             //transform.Translate(Vector3.right * m_Speed * Time.deltaTime);
         }
     }
-    
-
-
-    private void OnMouseDown()
-    {
-        Debug.Log(gameObject.name + " has been clicked");
-        LocalPlayerManager.instance.UpdateInputField(this);
-    }
 
     protected override void OnTargetHit(Collision2D collision)
     {
-        if (collision.gameObject.GetComponent<BasePlayer>() != null)
+        if (collision.gameObject.GetComponent<BasePlayer>() != null && !collision.gameObject.GetComponent<BasePlayer>().hasCollided)
         {
-            BasePlayer bp = collision.gameObject.GetComponent<BasePlayer>();
-            Vector3 collPoint = (transform.position + bp.transform.position) / 2;
+            BasePlayer lp = collision.gameObject.GetComponent<BasePlayer>();
+            Vector3 collPoint = (transform.position + lp.transform.position) / 2;
+            hasCollided = true;
 
             LocalPlayerManager.instance.StartRespawn(this, bp, collPoint);
             MusicManager.instance.PlayNote();
             MusicManager.instance.ChangeMusic();
         }
+    }
+
+    private void OnMouseDown()
+    {
+        Debug.Log(gameObject.name + " has been clicked");
+        LocalPlayerManager.instance.UpdateInputField(this);
     }
 }

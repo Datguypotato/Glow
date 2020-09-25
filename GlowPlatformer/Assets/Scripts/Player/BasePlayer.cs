@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class BasePlayer : MonoBehaviour
 {
-    public bool isTarget;
+    public bool hasCollided = false;
 
     [SerializeField] private AudioClip[] m_CollSFX;
     private AudioSource m_AudioSource;
@@ -22,10 +22,9 @@ public abstract class BasePlayer : MonoBehaviour
         m_Particle.Stop();
     }
 
-
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!isTarget)
+        if (collision.transform.CompareTag("Player"))
         {
             OnTargetHit(collision);
         }
@@ -51,7 +50,14 @@ public abstract class BasePlayer : MonoBehaviour
         }
     }
 
-    protected abstract void OnTargetHit(Collision2D collision);
+    public ParticleSystem GetParticle()
+    {
+        return m_Particle;
+    }
+
+    protected virtual void OnTargetHit(Collision2D collision)
+    {
+    }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {

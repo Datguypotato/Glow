@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400004}
   - component: {fileID: 12300000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lens flare glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 19800004}
   - component: {fileID: 19900002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: particle soul billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4594,7 +4594,7 @@ GameObject:
   - component: {fileID: 400002}
   - component: {fileID: 19800000}
   - component: {fileID: 19900000}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: particle ray random
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9138,7 +9138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400006}
   - component: {fileID: 19800002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Soul soft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13835,7 +13835,7 @@ GameObject:
   - component: {fileID: 400008}
   - component: {fileID: 19800006}
   - component: {fileID: 19900004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: particle spark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18524,7 +18524,7 @@ GameObject:
   - component: {fileID: 400010}
   - component: {fileID: 19800008}
   - component: {fileID: 19900006}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: particle ray horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23069,7 +23069,7 @@ GameObject:
   - component: {fileID: 400012}
   - component: {fileID: 19800010}
   - component: {fileID: 19900008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: particle glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23307,7 +23307,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2
-      minScalar: 2.5
+      minScalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -23851,7 +23851,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 3
+      scalar: 8
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -27758,7 +27758,7 @@ GameObject:
   - component: {fileID: 400014}
   - component: {fileID: 19800012}
   - component: {fileID: 19900010}
-  m_Layer: 1
+  m_Layer: 8
   m_Name: particle ray circumference
   m_TagString: Untagged
   m_Icon: {fileID: 0}
