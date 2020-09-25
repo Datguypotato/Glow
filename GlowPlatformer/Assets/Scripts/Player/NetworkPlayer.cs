@@ -12,7 +12,7 @@ public class NetworkPlayer : BasePlayer
 
     private void Update()
     {
-        rb.AddForce(joyDir);
+        rb.AddForce(joyDir * m_Speed);
     }
 
     public void SetJoyDir(Vector3 a_dir)

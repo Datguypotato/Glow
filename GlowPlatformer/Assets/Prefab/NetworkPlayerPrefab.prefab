@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Particle: {fileID: 8649697075356748676}
   m_KnockbackForce: 500
   m_ID: 
-  m_Speed: 10
+  m_Speed: 5
 --- !u!58 &4500868211126375809
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -476,10 +476,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5007990196079876908}
     m_Modifications:
-    - target: {fileID: 100006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
-      propertyPath: m_Name
-      value: Soul soft
-      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -523,6 +519,10 @@ PrefabInstance:
     - target: {fileID: 400006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
+      propertyPath: m_Name
+      value: Soul soft
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7706cfdb18270946b264f7e7a0fb4c6, type: 3}
