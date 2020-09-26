@@ -259,6 +259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkPlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8667684286359098192, guid: 140c67cd45ea8014088675a8c7a1cfe5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5007990196079876908, guid: 140c67cd45ea8014088675a8c7a1cfe5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -845,10 +850,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7b0d9d1a4c78aa748b77a56442dd5981, type: 3}
   - {fileID: 8300000, guid: 8756bedaa93980849b802dfd521edad7, type: 3}
   noteCounter: 0
-  loop1: {fileID: 415606924}
-  loop2: {fileID: 1112000110}
-  loop3: {fileID: 70602479}
-  loop4: {fileID: 0}
+  loop1: {fileID: 1160034889}
+  loop2: {fileID: 1160034889}
+  loop3: {fileID: 1160034889}
+  loop4: {fileID: 1160034889}
   musicIntensity: 0
 --- !u!82 &1160034889
 AudioSource:
