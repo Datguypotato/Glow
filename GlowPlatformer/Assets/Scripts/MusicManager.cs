@@ -7,8 +7,8 @@ public class MusicManager : MonoBehaviour
     public static MusicManager instance;
 
     //waiting for soundbites
-    [SerializeField] AudioClip[] notes;
-    [SerializeField] int noteCounter = 0;
+    //[SerializeField] AudioClip[] notes;
+    //[SerializeField] int noteCounter = 0;
 
     AudioSource m_audioSource;
 
@@ -40,14 +40,14 @@ public class MusicManager : MonoBehaviour
         loop3.mute = true;
     }
 
-    public void PlayNote()
-    {
-        m_audioSource.PlayOneShot(notes[noteCounter]);
-        noteCounter++;
+    //public void PlayNote()
+    //{
+    //    m_audioSource.PlayOneShot(notes[noteCounter]);
+    //    noteCounter++;
 
-        if (noteCounter >= notes.Length)
-            noteCounter = 0;
-    }
+    //    if (noteCounter >= notes.Length)
+    //        noteCounter = 0;
+    //}
 
     private void Update()
     {
@@ -92,6 +92,7 @@ public class MusicManager : MonoBehaviour
         onCd = false;
     }
 
+    // called from the playermanager
     public void ChangeMusic()
     {
         musicIntensity += 1;

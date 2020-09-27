@@ -42,7 +42,6 @@ public class PlayerController : BasePlayer
             Vector3 collPoint = (transform.position + bp.transform.position) / 2;
 
             LocalPlayerManager.instance.StartRespawn(this, bp, collPoint);
-            MusicManager.instance.PlayNote();
             MusicManager.instance.ChangeMusic();
         }
     }

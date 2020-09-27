@@ -47,7 +47,6 @@ public class NetworkPlayer : BasePlayer
             hasCollided = true;
 
             NetworkPlayerManager.instance.StartRespawn(this, lp, collPoint);
-            MusicManager.instance.PlayNote();
         }
     }
 }

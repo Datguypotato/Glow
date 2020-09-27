@@ -29,6 +29,7 @@ public class PlayerManager : MonoBehaviour
     {
         StartCoroutine(RespawnPairs(p1, p2, collPoint));
         SpawnAfterGlow(p1.transform.position, p2.transform.position, collPoint);
+        MusicManager.instance.ChangeMusic();
     }
 
     public IEnumerator RespawnPairs(BasePlayer p1, BasePlayer p2, Vector3 collPoint)

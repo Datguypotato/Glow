@@ -49,7 +49,6 @@ public class LocalPlayer : BasePlayer
             hasCollided = true;
 
             LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
-            MusicManager.instance.PlayNote();
             MusicManager.instance.ChangeMusic();
         }
     }
