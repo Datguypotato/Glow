@@ -16,6 +16,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource loop2;
     public AudioSource loop3;
     public AudioSource loop4;
+    public AudioSource loop5;
 
     public int musicIntensity = 0;
     bool onCd;
@@ -38,6 +39,8 @@ public class MusicManager : MonoBehaviour
         loop1.mute = true;
         loop2.mute = true;
         loop3.mute = true;
+        loop4.mute = true;
+        loop5.mute = true;
     }
 
     //public void PlayNote()
@@ -56,7 +59,7 @@ public class MusicManager : MonoBehaviour
             StartCoroutine(CountDown());
         }
 
-        if (musicIntensity < 6)
+        if (musicIntensity < 4)
         {
             loop1.mute = false;
         }
@@ -65,7 +68,7 @@ public class MusicManager : MonoBehaviour
             loop1.mute = true;
         }
 
-        if (musicIntensity > 5 && musicIntensity < 11)
+        if (musicIntensity > 3 && musicIntensity < 7)
         {
             loop2.mute = false;
         }
@@ -74,7 +77,7 @@ public class MusicManager : MonoBehaviour
             loop2.mute = true;
         }
 
-        if (musicIntensity > 10)
+        if (musicIntensity > 6)
         {
             loop3.mute = false;
         }
@@ -82,12 +85,14 @@ public class MusicManager : MonoBehaviour
         {
             loop3.mute = true;
         }
+
+       // if (musicIntensity < 9 && musicIntensity > 12)
     }
 
     IEnumerator CountDown()
     {
         onCd = true;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(10);
         musicIntensity -= 1;
         onCd = false;
     }
