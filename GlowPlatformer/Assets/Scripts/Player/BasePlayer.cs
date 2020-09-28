@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class BasePlayer : MonoBehaviour
 {
     public bool hasCollided = false;
+    public bool isTicker = false;
 
     [SerializeField] private AudioClip[] m_CollSFX;
     private AudioSource m_AudioSource;
@@ -24,7 +25,7 @@ public abstract class BasePlayer : MonoBehaviour
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.CompareTag("Player"))
+        if (collision.transform.CompareTag("Player") && !collision.gameObject.GetComponent<BasePlayer>().hasCollided)
         {
             OnTargetHit(collision);
         }
@@ -57,6 +58,25 @@ public abstract class BasePlayer : MonoBehaviour
 
     protected virtual void OnTargetHit(Collision2D collision)
     {
+
+        BasePlayer bp = collision.gameObject.GetComponent<BasePlayer>();
+        hasCollided = true;
+
+        if (isTicker == bp.isTicker)
+        {
+            return;
+        }
+
+        if (isTicker)
+        {
+            bp.isTicker = true;
+            isTicker = false;
+        }
+        else if (bp.isTicker)
+        {
+            isTicker = true;
+            bp.isTicker = false;
+        }
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collision)

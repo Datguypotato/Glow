@@ -47,9 +47,6 @@ public class LocalPlayer : BasePlayer
             BasePlayer lp = collision.gameObject.GetComponent<BasePlayer>();
             Vector3 collPoint = (transform.position + lp.transform.position) / 2;
             hasCollided = true;
-
-            LocalPlayerManager.instance.StartRespawn(this, lp, collPoint);
-            MusicManager.instance.ChangeMusic();
         }
     }
 

@@ -31,7 +31,7 @@ public class NetworkPlayer : BasePlayer
         m_ID = a_ID;
     }
 
-    public string GetId()
+    public string GetID()
     {
         return m_ID;
     }
@@ -46,7 +46,6 @@ public class NetworkPlayer : BasePlayer
             Vector3 collPoint = (transform.position + lp.transform.position) / 2;
             hasCollided = true;
 
-            NetworkPlayerManager.instance.StartRespawn(this, lp, collPoint);
         }
     }
 }
