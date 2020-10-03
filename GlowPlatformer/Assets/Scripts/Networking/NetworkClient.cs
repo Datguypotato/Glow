@@ -41,7 +41,6 @@ public class NetworkClient : SocketIOComponent
 
         On("register", (E) =>
         {
-            Debug.Log("Register called");
             JSONNode node = JSON.Parse(E.data.ToString());
             Client_ID = node["id"].Value;
 
@@ -50,7 +49,6 @@ public class NetworkClient : SocketIOComponent
 
         On("spawn", (E) =>
         {
-            Debug.Log("Spawned called");
             JSONNode node = JSON.Parse(E.data.ToString());
 
             string id = node["id"].Value;
@@ -64,14 +62,17 @@ public class NetworkClient : SocketIOComponent
             NetworkPlayer ni = g.GetComponent<NetworkPlayer>();
             ni.SetID(id);
             m_ServerObjects.Add(id, ni);
+            //m_playersID.Add(id);
         });
 
-        On("disconnected", (E) =>
+        On("webplayerdisconnect", (E) =>
         {
+            Debug.Log("a player disconnected");
             JSONNode node = JSON.Parse(E.data.ToString());
 
             string id = node["id"].Value;
 
+            
             GameObject g = m_ServerObjects[id].gameObject;
             Destroy(g);
             m_ServerObjects.Remove(id);
