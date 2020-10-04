@@ -34,8 +34,8 @@ public class PlayerManager : MonoBehaviour
 
     public IEnumerator RespawnPairs(BasePlayer p1, BasePlayer p2, Vector3 collPoint)
     {
-        p1.GetParticle().Stop();
-        p2.GetParticle().Stop();
+        //p1.GetParticle().Stop();
+        //p2.GetParticle().Stop();
 
         p1.gameObject.SetActive(false);
         p2.gameObject.SetActive(false);

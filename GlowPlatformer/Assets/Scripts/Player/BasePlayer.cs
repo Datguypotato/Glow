@@ -11,7 +11,7 @@ public abstract class BasePlayer : MonoBehaviour
     private AudioSource m_AudioSource;
     private int lastIndex = 0;
 
-    [SerializeField] protected ParticleSystem m_Particle;
+    //[SerializeField] protected ParticleSystem m_Particle;
 
     [SerializeField] protected float m_KnockbackForce = 500;
     protected Rigidbody2D rb;
@@ -20,7 +20,7 @@ public abstract class BasePlayer : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         m_AudioSource = GetComponent<AudioSource>();
-        m_Particle.Stop();
+        //m_Particle.Stop();
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
@@ -51,10 +51,10 @@ public abstract class BasePlayer : MonoBehaviour
         }
     }
 
-    public ParticleSystem GetParticle()
-    {
-        return m_Particle;
-    }
+    //public ParticleSystem GetParticle()
+    //{
+    //    return m_Particle;
+    //}
 
     protected virtual void OnTargetHit(Collision2D collision)
     {
@@ -79,19 +79,19 @@ public abstract class BasePlayer : MonoBehaviour
         }
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            m_Particle.Play();
-        }
-    }
+    //protected virtual void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player"))
+    //    {
+    //        m_Particle.Play();
+    //    }
+    //}
 
-    protected virtual void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            m_Particle.Stop();
-        }
-    }
+    //protected virtual void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.CompareTag("Player"))
+    //    {
+    //        m_Particle.Stop();
+    //    }
+    //}
 }
