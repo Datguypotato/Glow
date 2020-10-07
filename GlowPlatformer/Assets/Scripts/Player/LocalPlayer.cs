@@ -10,6 +10,8 @@ public class LocalPlayer : BasePlayer
     public KeyCode left;
     public KeyCode right;
 
+    public ParticleSystem ps;
+
     //[SerializeField] LocalPlayer m_Target;
 
 
@@ -37,6 +39,15 @@ public class LocalPlayer : BasePlayer
         {
             rb.AddForce(Vector2.right * m_Speed);
             //transform.Translate(Vector3.right * m_Speed * Time.deltaTime);
+        }
+
+        if(isTicker == true)
+        {
+            ps.Play();
+        }
+        else
+        {
+            ps.Pause();
         }
     }
 
