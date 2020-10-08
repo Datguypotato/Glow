@@ -61,6 +61,7 @@ public class NetworkClient : SocketIOComponent
 
             NetworkPlayer ni = g.GetComponent<NetworkPlayer>();
             ni.SetID(id);
+            ni.SetUsername(node["username"]);
             m_ServerObjects.Add(id, ni);
             //m_playersID.Add(id);
         });

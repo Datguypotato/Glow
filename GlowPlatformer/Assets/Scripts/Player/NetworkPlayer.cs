@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NetworkPlayer : BasePlayer
 {
@@ -9,6 +10,8 @@ public class NetworkPlayer : BasePlayer
 
     Vector3 joyDir = Vector3.zero;
     [SerializeField] private float m_Speed = 4;
+
+    [SerializeField] TMP_Text m_Username;
     
 
     protected override void Start()
@@ -36,6 +39,16 @@ public class NetworkPlayer : BasePlayer
     public string GetID()
     {
         return m_ID;
+    }
+
+    public void SetUsername(string a_username)
+    {
+        m_Username.text = a_username;
+    }
+
+    public string Getusername()
+    {
+        return m_Username.text;
     }
 
     protected override void OnTargetHit(Collision2D collision)
