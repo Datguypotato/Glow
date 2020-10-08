@@ -34,7 +34,7 @@ public class PlayerController : BasePlayer
      //   LocalPlayerManager.instance.UpdateInputField(this);
     }
 
-    protected override void OnTargetHit(Collision2D collision)
+    protected override void OnPlayerHit(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<BasePlayer>() != null)
         {

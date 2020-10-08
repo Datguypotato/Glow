@@ -10,7 +10,6 @@ public class NetworkClient : SocketIOComponent
     [SerializeField] private Dictionary<string, NetworkPlayer> m_ServerObjects;
 
     [SerializeField] private GameObject m_PlayerPrefab;
-    
 
     public static string Client_ID { get; private set; }
 
@@ -62,8 +61,12 @@ public class NetworkClient : SocketIOComponent
             NetworkPlayer ni = g.GetComponent<NetworkPlayer>();
             ni.SetID(id);
             ni.SetUsername(node["username"]);
+
+            // first player wil be always the ticker
+            if (m_ServerObjects.Count == 0)
+                ni.isTicker = true;
+
             m_ServerObjects.Add(id, ni);
-            //m_playersID.Add(id);
         });
 
         On("webplayerdisconnect", (E) =>
