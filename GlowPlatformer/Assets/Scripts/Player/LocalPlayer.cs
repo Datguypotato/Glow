@@ -64,6 +64,6 @@ public class LocalPlayer : BasePlayer
     private void OnMouseDown()
     {
         Debug.Log(gameObject.name + " has been clicked");
-        LocalPlayerManager.instance.UpdateInputField(this);
+      //  LocalPlayerManager.instance.UpdateInputField(this);
     }
 }
