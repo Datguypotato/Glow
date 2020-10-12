@@ -34,6 +34,7 @@ public class PlayerController : BasePlayer
      //   LocalPlayerManager.instance.UpdateInputField(this);
     }
 
+    /*
     protected override void OnPlayerHit(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<BasePlayer>() != null)
@@ -45,4 +46,5 @@ public class PlayerController : BasePlayer
             MusicManager.instance.ChangeMusic();
         }
     }
+    */
 }

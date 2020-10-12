@@ -32,6 +32,7 @@ public class PlayerJoystick : BasePlayer
        // LocalPlayerManager.instance.UpdateInputField(this);
     }
 
+    /*
     protected override void OnPlayerHit(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<BasePlayer>() != null)
@@ -42,5 +43,6 @@ public class PlayerJoystick : BasePlayer
             LocalPlayerManager.instance.StartRespawn(this, bp, collPoint);
             MusicManager.instance.ChangeMusic();
         }
-    }
+    
+    */
 }

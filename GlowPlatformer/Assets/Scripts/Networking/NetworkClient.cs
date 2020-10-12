@@ -99,8 +99,6 @@ public class NetworkClient : SocketIOComponent
             float y = node["position"]["y"].AsFloat / 100;
 
             NetworkPlayer ni = m_ServerObjects[id];
-
-            Debug.Log(m_ServerObjects[id]);
             ni.SetJoyDir(new Vector3(x, y, 0));
         });
     }

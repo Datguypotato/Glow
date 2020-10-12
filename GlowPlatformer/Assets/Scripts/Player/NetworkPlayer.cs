@@ -20,11 +20,11 @@ public class NetworkPlayer : BasePlayer
     protected override void Start()
     {
         base.Start();
-        Color randColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        Color randColor = new Color(Random.Range(0.3f, 1f), Random.Range(0.3f, 1f), Random.Range(0.3f, 1f));
         modelMeshRenderer.material.color = randColor;
     }
 
-    private void Update()
+    protected void Update()
     {
         rb.AddForce(joyDir * m_Speed);
 
@@ -47,9 +47,19 @@ public class NetworkPlayer : BasePlayer
         joyDir = a_dir;
 
         if (a_dir == Vector3.zero)
-            anim.SetBool("Moving", false);
+        {
+            for (int i = 0; i < anim.Length; i++)
+            {
+                anim[i].SetBool("Moving", false);
+            }
+        }
         else
-            anim.SetBool("Moving", true);
+        {
+            for (int i = 0; i < anim.Length; i++)
+            {
+                anim[i].SetBool("Moving", true);
+            }
+        }            
     }
 
     public void SetID(string a_ID)
@@ -70,18 +80,5 @@ public class NetworkPlayer : BasePlayer
     public string Getusername()
     {
         return m_Username.text;
-    }
-
-    protected override void OnPlayerHit(Collision2D collision)
-    {
-        base.OnPlayerHit(collision);
-
-        if (collision.gameObject.GetComponent<BasePlayer>() != null && !collision.gameObject.GetComponent<BasePlayer>().hasCollided)
-        {
-            BasePlayer lp = collision.gameObject.GetComponent<BasePlayer>();
-            Vector3 collPoint = (transform.position + lp.transform.position) / 2;
-            hasCollided = true;
-
-        }
     }
 }

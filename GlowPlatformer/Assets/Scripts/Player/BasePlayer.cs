@@ -6,6 +6,8 @@ public abstract class BasePlayer : MonoBehaviour
 {
     [HideInInspector] public bool hasCollided = false;
     public bool isTicker = false;
+    public ParticleSystem ps;
+
 
     [SerializeField] private AudioClip[] m_CollSFX;
     private AudioSource m_AudioSource;
@@ -13,22 +15,33 @@ public abstract class BasePlayer : MonoBehaviour
     
     [SerializeField] protected float m_KnockbackForce = 500;
     protected Rigidbody2D rb;
-    protected GameObject collEffectPrefab;
+    [SerializeField] protected GameObject collEffectPrefab;
 
-    [SerializeField] protected Animator anim;
+    [SerializeField] protected Animator[] anim;
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         m_AudioSource = GetComponent<AudioSource>();
-        anim = GetComponentInChildren<Animator>();
+        anim = GetComponentsInChildren<Animator>();
+
+        if (isTicker)
+        {
+            ps.Play(true);
+        }
+        else
+        {
+            ps.Stop(true);
+        }
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.CompareTag("Player") && !collision.gameObject.GetComponent<BasePlayer>().hasCollided)
         {
-            OnPlayerHit(collision);
+            hasCollided = true;
+            BasePlayer bp = collision.gameObject.GetComponent<BasePlayer>();
+            OnPlayerHit(bp);
         }
 
         int randomIndex = Random.Range(0, m_CollSFX.Length);
@@ -46,31 +59,44 @@ public abstract class BasePlayer : MonoBehaviour
         m_AudioSource.PlayOneShot(m_CollSFX[randomIndex]);
     }
 
+    protected void OnCollisionExit2D(Collision2D collision)
+    {
+        hasCollided = false;
+    }
+
     //public ParticleSystem GetParticle()
     //{
     //    return m_Particle;
     //}
 
-    protected virtual void OnPlayerHit(Collision2D collision)
+    protected void OnPlayerHit(BasePlayer a_Player)
     {
-
-        BasePlayer bp = collision.gameObject.GetComponent<BasePlayer>();
-        hasCollided = true;
-
-        if (isTicker == bp.isTicker)
+        if (isTicker == a_Player.isTicker)
         {
             return;
         }
 
         if (isTicker)
         {
-            bp.isTicker = true;
-            isTicker = false;
+            a_Player.isTicker = true;
+            isTicker = false;            
         }
-        else if (bp.isTicker)
+        else if (a_Player.isTicker)
         {
             isTicker = true;
-            bp.isTicker = false;
+            a_Player.isTicker = false;
+        }
+
+
+        if (isTicker)
+        {
+            ps.Play(true);
+            a_Player.ps.Stop(true);
+        }
+        else
+        {
+            ps.Stop(true);
+            a_Player.ps.Play(true);
         }
     }
 

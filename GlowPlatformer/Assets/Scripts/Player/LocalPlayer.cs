@@ -10,7 +10,7 @@ public class LocalPlayer : BasePlayer
     public KeyCode left;
     public KeyCode right;
 
-    public ParticleSystem ps;
+
 
     //[SerializeField] LocalPlayer m_Target;
 
@@ -18,7 +18,7 @@ public class LocalPlayer : BasePlayer
     [SerializeField] float m_Speed;
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if(Input.GetKey(up))
         {
@@ -39,25 +39,6 @@ public class LocalPlayer : BasePlayer
         {
             rb.AddForce(Vector2.right * m_Speed);
             //transform.Translate(Vector3.right * m_Speed * Time.deltaTime);
-        }
-
-        if(isTicker == true)
-        {
-            ps.Play();
-        }
-        else
-        {
-            ps.Pause();
-        }
-    }
-
-    protected override void OnPlayerHit(Collision2D collision)
-    {
-        if (collision.gameObject.GetComponent<BasePlayer>() != null && !collision.gameObject.GetComponent<BasePlayer>().hasCollided)
-        {
-            BasePlayer lp = collision.gameObject.GetComponent<BasePlayer>();
-            Vector3 collPoint = (transform.position + lp.transform.position) / 2;
-            hasCollided = true;
         }
     }
 
