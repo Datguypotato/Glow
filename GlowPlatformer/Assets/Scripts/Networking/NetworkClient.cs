@@ -25,6 +25,12 @@ public class NetworkClient : SocketIOComponent
         m_ServerObjects = new Dictionary<string, NetworkPlayer>();
     }
 
+    // voor playerinfo
+    public Dictionary<string, NetworkPlayer> GetPlayersData()
+    {
+        return m_ServerObjects;
+    }
+
     // Update is called once per frame
     public override void Update()
     {
