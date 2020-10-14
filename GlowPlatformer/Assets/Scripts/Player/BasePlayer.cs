@@ -64,11 +64,6 @@ public abstract class BasePlayer : MonoBehaviour
         hasCollided = false;
     }
 
-    //public ParticleSystem GetParticle()
-    //{
-    //    return m_Particle;
-    //}
-
     protected void OnPlayerHit(BasePlayer a_Player)
     {
         if (isTicker == a_Player.isTicker)

@@ -90,7 +90,7 @@ namespace SocketIO
 
 		#region Unity interface
 
-		public void Awake()
+		public virtual void Awake()
 		{
 			encoder = new Encoder();
 			decoder = new Decoder();

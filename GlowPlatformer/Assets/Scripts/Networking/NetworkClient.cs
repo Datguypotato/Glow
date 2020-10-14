@@ -6,12 +6,29 @@ using SimpleJSON;
 
 public class NetworkClient : SocketIOComponent 
 {
+    public static NetworkClient instance;
+
     [SerializeField] private Transform m_NetworkContainer;
     [SerializeField] private Dictionary<string, NetworkPlayer> m_ServerObjects;
 
     [SerializeField] private GameObject m_PlayerPrefab;
 
     public static string Client_ID { get; private set; }
+
+    public override void Awake()
+    {
+        base.Awake();
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     public override void Start()
     {
@@ -101,6 +118,14 @@ public class NetworkClient : SocketIOComponent
             NetworkPlayer ni = m_ServerObjects[id];
             ni.SetJoyDir(new Vector3(x, y, 0));
         });
+    }
+
+    // called from PlayInfo
+    public void KickPlayer(NetworkPlayer a_Player)
+    {
+        m_ServerObjects.Remove(a_Player.GetID());
+
+        // emit to the user that he/she is kicked
     }
 
 }

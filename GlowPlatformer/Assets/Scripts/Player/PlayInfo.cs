@@ -11,8 +11,7 @@ public class PlayInfo : MonoBehaviour
     public GameObject InfoText;
     public TextMeshProUGUI TextMesh;
     public string text;
-    bool tickerCheck;
-    string ID;
+    bool tickerCheck;    
 
     float timeAlive;
     int secondsAlive;
@@ -20,7 +19,6 @@ public class PlayInfo : MonoBehaviour
     private void Start()
     {
         tickerCheck = gameObject.GetComponentInParent<NetworkPlayer>().isTicker;
-        ID = gameObject.GetComponentInParent<NetworkPlayer>().GetID();
     }
 
     private void Update()
@@ -49,7 +47,7 @@ public class PlayInfo : MonoBehaviour
 
     private void OnMouseDown()
     {
-        GameObject.Find("Networking").GetComponent<NetworkClient>().GetPlayersData().Remove(ID);
+        NetworkClient.instance.KickPlayer(GetComponent<NetworkPlayer>());
 
         Destroy(gameObject);
     }
