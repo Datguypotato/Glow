@@ -21,16 +21,16 @@ public class PlayInfo : MonoBehaviour
         tickerCheck = gameObject.GetComponentInParent<NetworkPlayer>().isTicker;
     }
 
-    private void Update()
-    {
-        timeAlive += Time.deltaTime;
-        secondsAlive = (int)(timeAlive % 60);
-    }
-
     private void OnMouseEnter()
     {
         InfoText.SetActive(true);
-        if(tickerCheck == true)
+    }
+    private void OnMouseOver()
+    {
+        timeAlive += Time.deltaTime;
+        secondsAlive = (int)(timeAlive % 60);
+
+        if (tickerCheck == true)
         {
             TextMesh.text = "Is tikker\n" + secondsAlive;
         }
@@ -39,7 +39,6 @@ public class PlayInfo : MonoBehaviour
             TextMesh.text = "Is geen tikker\n" + secondsAlive;
         }
     }
-
     private void OnMouseExit()
     {
         InfoText.SetActive(false);
