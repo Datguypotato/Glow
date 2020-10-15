@@ -22,6 +22,9 @@ public class NetworkPlayer : BasePlayer
         base.Start();
         Color randColor = new Color(Random.Range(0.3f, 1f), Random.Range(0.3f, 1f), Random.Range(0.3f, 1f));
         modelMeshRenderer.material.color = randColor;
+
+        // TODO: call networkclient to send color of your player
+        // color(of player), tagged
     }
 
     protected void Update()

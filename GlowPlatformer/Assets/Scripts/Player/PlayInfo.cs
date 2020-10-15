@@ -13,22 +13,21 @@ public class PlayInfo : MonoBehaviour
     public string text;
     bool tickerCheck;    
 
-    float timeAlive;
+    float timeAliveStart;
     int secondsAlive;
 
     private void Start()
     {
         tickerCheck = gameObject.GetComponentInParent<NetworkPlayer>().isTicker;
+        timeAliveStart = Time.time;
     }
-
     private void OnMouseEnter()
     {
         InfoText.SetActive(true);
     }
     private void OnMouseOver()
     {
-        timeAlive += Time.deltaTime;
-        secondsAlive = (int)(timeAlive % 60);
+        secondsAlive = (int)((Time.time - timeAliveStart) % 60);
 
         if (tickerCheck == true)
         {

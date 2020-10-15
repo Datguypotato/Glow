@@ -65,8 +65,6 @@ public class NetworkClient : SocketIOComponent
         {
             JSONNode node = JSON.Parse(E.data.ToString());
             Client_ID = node["id"].Value;
-
-            Debug.Log("Client id: " + Client_ID + "joined");
         });
 
         On("spawn", (E) =>
@@ -124,9 +122,13 @@ public class NetworkClient : SocketIOComponent
     public void KickPlayer(NetworkPlayer a_Player)
     {
         m_ServerObjects.Remove(a_Player.GetID());
+        JSONObject data = new JSONObject();
+        data.Add(a_Player.GetID());
 
         // emit to the user that he/she is kicked
+        Emit("kickPlayer", data);
     }
 
+    //public void Send
 }
 
