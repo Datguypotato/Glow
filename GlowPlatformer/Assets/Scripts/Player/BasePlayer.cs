@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class BasePlayer : MonoBehaviour
 {
     [HideInInspector] public bool hasCollided = false;
-    public bool isTicker = false;
+    public bool isTagger = false;
     public ParticleSystem ps;
 
 
@@ -25,7 +25,7 @@ public abstract class BasePlayer : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
         anim = GetComponentsInChildren<Animator>();
 
-        if (isTicker)
+        if (isTagger)
         {
             ps.Play(true);
         }
@@ -66,24 +66,24 @@ public abstract class BasePlayer : MonoBehaviour
 
     protected void OnPlayerHit(BasePlayer a_Player)
     {
-        if (isTicker == a_Player.isTicker)
+        if (isTagger == a_Player.isTagger)
         {
             return;
         }
 
-        if (isTicker)
+        if (isTagger)
         {
-            a_Player.isTicker = true;
-            isTicker = false;            
+            a_Player.isTagger = true;
+            isTagger = false;            
         }
-        else if (a_Player.isTicker)
+        else if (a_Player.isTagger)
         {
-            isTicker = true;
-            a_Player.isTicker = false;
+            isTagger = true;
+            a_Player.isTagger = false;
         }
 
 
-        if (isTicker)
+        if (isTagger)
         {
             ps.Play(true);
             a_Player.ps.Stop(true);

@@ -85,7 +85,7 @@ public class NetworkClient : SocketIOComponent
 
             // first player wil be always the ticker
             if (m_ServerObjects.Count == 0)
-                ni.isTicker = true;
+                ni.isTagger = true;
 
             m_ServerObjects.Add(id, ni);
         });
@@ -129,6 +129,24 @@ public class NetworkClient : SocketIOComponent
         Emit("kickPlayer", data);
     }
 
-    //public void Send
+    public void SendStatus(string a_PlayerID, Color a_PlayerColor)
+    {        
+        JSONObject data = new JSONObject();
+        data.Add(a_PlayerID);
+        data.Add(a_PlayerColor.r);
+        data.Add(a_PlayerColor.g);
+        data.Add(a_PlayerColor.b);
+
+        Emit("playerColor", data);
+    }
+
+    public void SendStatus(string a_PlayerID, bool a_IsTagger)
+    {
+        JSONObject data = new JSONObject();
+        data.Add(a_PlayerID);
+        data.Add(a_IsTagger);
+
+        Emit("playerIsTagger", data);
+    }
 }
 

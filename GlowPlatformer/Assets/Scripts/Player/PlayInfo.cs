@@ -18,7 +18,7 @@ public class PlayInfo : MonoBehaviour
 
     private void Start()
     {
-        tickerCheck = gameObject.GetComponentInParent<NetworkPlayer>().isTicker;
+        tickerCheck = gameObject.GetComponentInParent<NetworkPlayer>().isTagger;
         timeAliveStart = Time.time;
     }
     private void OnMouseEnter()

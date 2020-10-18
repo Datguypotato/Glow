@@ -23,8 +23,8 @@ public class NetworkPlayer : BasePlayer
         Color randColor = new Color(Random.Range(0.3f, 1f), Random.Range(0.3f, 1f), Random.Range(0.3f, 1f));
         modelMeshRenderer.material.color = randColor;
 
-        // TODO: call networkclient to send color of your player
-        // color(of player), tagged
+        SendPlayerColorStatus();
+        SendPlayerTickerStatus();
     }
 
     protected void Update()
@@ -83,5 +83,16 @@ public class NetworkPlayer : BasePlayer
     public string Getusername()
     {
         return m_Username.text;
+    }
+    protected void SendPlayerColorStatus()
+    {
+        Color playerColor = modelMeshRenderer.material.color;
+
+        NetworkClient.instance.SendStatus(m_ID, playerColor);
+    }
+
+    protected void SendPlayerTickerStatus()
+    {
+        NetworkClient.instance.SendStatus(m_ID, isTagger);
     }
 }
